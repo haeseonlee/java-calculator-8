@@ -1,6 +1,8 @@
 package calculator;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Validator {
 
@@ -12,4 +14,12 @@ public class Validator {
         }
     }
 
+    public static void validateContainDelimiter(String input) {
+        Pattern pattern = Pattern.compile("[^a-zA-Z0-9가-힣ㄱ-ㅎㅏ-ㅣ]");
+        Matcher matcher = pattern.matcher(input);
+
+        if (!matcher.find() && !input.isEmpty()) {
+            throw new IllegalArgumentException("[ERROR] 구분자를 입력해 주세요.");
+        }
+    }
 }
