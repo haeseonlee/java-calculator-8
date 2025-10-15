@@ -10,4 +10,11 @@ public class DelimiterParser {
                 .toList();
     }
 
+    public List<String> customParser(String input) {
+        String replacedStr = input.replaceAll("//", "").replace("\\n", "");
+        String delimiter = replacedStr.substring(0, 1);
+        return Arrays.stream(replacedStr.substring(1).split(delimiter))
+                .toList();
+    }
+
 }
