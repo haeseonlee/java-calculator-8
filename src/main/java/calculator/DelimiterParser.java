@@ -5,6 +5,13 @@ import java.util.List;
 
 public class DelimiterParser {
 
+    public List<String> selectParser(String input) {
+        if (input.startsWith("//")) {
+            return customParser(input);
+        }
+        return basicParser(input);
+    }
+
     public List<String> basicParser(String input) {
         return Arrays.stream(input.split("[,:]"))
                 .toList();
