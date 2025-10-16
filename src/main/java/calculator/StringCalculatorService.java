@@ -1,0 +1,28 @@
+package calculator;
+
+import java.util.List;
+
+public class StringCalculatorService {
+
+    private final DelimiterParser delimiterParser;
+    private final Calculator calculator;
+
+    public StringCalculatorService(DelimiterParser delimiterParser, Calculator calculator) {
+        this.delimiterParser = delimiterParser;
+        this.calculator = calculator;
+    }
+
+    public int StringAddCalculate(String input) {
+        if (input == null || input.isEmpty()) {
+            return 0;
+        }
+
+        List<String> values = delimiterParser.selectParser(input);
+        Validator.validateNumericInput(values);
+
+        List<Integer> numbers = StringToNumberConverter.convert(values);
+        Validator.validatePositiveNumber(numbers);
+
+        return calculator.calculate(numbers);
+    }
+}
