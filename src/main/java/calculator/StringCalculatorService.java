@@ -20,7 +20,6 @@ public class StringCalculatorService {
         Validator.validateContainDelimiter(input);
 
         List<String> values = delimiterParser.selectParser(input);
-        Validator.validateNumericInput(values);
 
         List<Integer> numbers = StringToNumberConverter.convert(values);
         Validator.validatePositiveNumber(numbers);

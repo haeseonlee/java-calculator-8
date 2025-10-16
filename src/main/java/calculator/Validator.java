@@ -6,14 +6,6 @@ import java.util.regex.Pattern;
 
 public class Validator {
 
-    public static void validateNumericInput(List<String> numbers) {
-        for (String number : numbers) {
-            if (!number.matches("\\d+")) {
-                throw new IllegalArgumentException("[ERROR] 숫자 이외의 값은 입력할 수 없습니다.");
-            }
-        }
-    }
-
     public static void validateContainDelimiter(String input) {
         Pattern pattern = Pattern.compile("[^a-zA-Z0-9가-힣ㄱ-ㅎㅏ-ㅣ]");
         Matcher matcher = pattern.matcher(input);
