@@ -1,5 +1,6 @@
-package calculator;
+package calculator.service;
 
+import calculator.domain.Calculator;
 import calculator.util.StringToNumberConverter;
 import calculator.util.Validator;
 
