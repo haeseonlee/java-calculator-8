@@ -12,12 +12,12 @@ public class DelimiterParser {
         return basicParser(input);
     }
 
-    public List<String> basicParser(String input) {
+    private List<String> basicParser(String input) {
         return Arrays.stream(input.split("[,:]"))
                 .toList();
     }
 
-    public List<String> customParser(String input) {
+    private List<String> customParser(String input) {
         String replacedStr = input.replaceAll("//", "").replace("\\n", "");
         String delimiter = replacedStr.substring(0, 1);
         return Arrays.stream(replacedStr.substring(1).split(delimiter))
