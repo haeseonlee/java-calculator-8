@@ -17,7 +17,7 @@ public class CalculatorApp {
 
     public void start() {
         String input = inputView.readString();
-        int result = service.StringAddCalculate(input);
+        int result = service.stringAddCalculate(input);
         outputView.printResult(result);
     }
 }

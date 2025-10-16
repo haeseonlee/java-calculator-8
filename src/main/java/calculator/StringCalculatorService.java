@@ -12,7 +12,7 @@ public class StringCalculatorService {
         this.calculator = calculator;
     }
 
-    public int StringAddCalculate(String input) {
+    public int stringAddCalculate(String input) {
         if (input == null || input.isEmpty()) {
             return 0;
         }
