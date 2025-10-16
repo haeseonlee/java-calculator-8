@@ -17,6 +17,8 @@ public class StringCalculatorService {
             return 0;
         }
 
+        Validator.validateContainDelimiter(input);
+
         List<String> values = delimiterParser.selectParser(input);
         Validator.validateNumericInput(values);
 
