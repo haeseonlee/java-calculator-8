@@ -1,5 +1,8 @@
 package calculator;
 
+import calculator.util.StringToNumberConverter;
+import calculator.util.Validator;
+
 import java.util.List;
 
 public class StringCalculatorService {
